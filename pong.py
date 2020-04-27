@@ -48,7 +48,7 @@ pen.color("white")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Player1: 0  Player2: 0", align="center", font=("Courier", 24, "normal"))
+pen.write("Player1: 0   Player2: 0", align="center", font=("Calibri", 25, "normal"))
 
 
 # Actions
@@ -101,10 +101,16 @@ while True:
 	if ball.xcor() > 390:
 		ball.goto(0,0)
 		ball.dx *= -1
+		score_1 += 1
+		pen.clear()
+		pen.write(f"Player1: {score_1}   Player2: {score_2}", align="center", font=("Calibri", 25, "normal"))
 
 	if ball.xcor() < -390:
 		ball.goto(0,0)
 		ball.dx *= -1
+		score_2 += 1
+		pen.clear()
+		pen.write(f"Player1: {score_1}   Player2: {score_2}", align="center", font=("Calibri", 25, "normal"))
 
 	# Ball bounce
 	if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < player2.ycor() + 40 and ball.ycor() > player2.ycor() - 40):
